@@ -11,6 +11,7 @@
 ### Scripts:
 - apache-server-status.py: Retrieves data from unprotected /server-status pages on Apache servers ...
 - crimeflare.py: [Uncovering bad guys hiding behind CloudFlare](http://crimeflare.com)!
+- dnsbl.py: HTTP:Bl based host checking script.
 - dns-zone-transfer.py: Requests a zone transfer (AXFR Query) from a DNS server.
 - fingerprintor.py: Retrieves (basic) descriptive information on Tor hidden services ...
 - pwn-test.py: [Check if you have an account that has been compromised in a data breach](https://haveibeenpwned.com/).
