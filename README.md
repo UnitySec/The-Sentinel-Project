@@ -1,5 +1,5 @@
 # The Sentinel Project
-##### Note: You are going to need Python 3.6 or higger in order to run those scripts.
+##### Note: You are going to need Python 3.6+ in order to run those scripts.
 
 ### Modules:
 - utils.py: Simple (small and almost useless) utils to be used on scripts ...
