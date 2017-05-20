@@ -2,7 +2,7 @@ import dns.resolver
 
 
 class DNSbl(object):
-    def __init__(self, access_key: str = ""):
+    def __init__(self, access_key: str):
         self.access_key = access_key
         self.map = {"suspicious": [1, 3, 5, 7], "harvester": [2, 3, 6, 7], "spammer": [4, 5, 6, 7]}
         self.search_engines = {0: "Unknown", 1: "AltaVista", 2: "Ask", 3: "Baidu",
