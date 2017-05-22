@@ -1,5 +1,7 @@
 # The Sentinel Project
-##### Note: You are going to need Python 3.6+ in order to run those scripts.
+##### Notes: 
+- You are going to need Python 3.6+ in order to run these scripts.
+- All these scripts are made by me.
 
 ### Modules:
 - utils.py: Simple (small and almost useless) utils to be used on scripts ...
@@ -18,6 +20,3 @@
 - tor-console.py: [Stem](https://stem.torproject.org/) based console.
 - track.py: Basic host location tracker using the JSON API provided by [IP-API](http://ip-api.com).
 - whois.py: Executes whois queries against whois servers (obviously).
-
-
-My english is not that good and same goes for my scripts. Feel free to send pull requests, update code and even suggest corrections for this readme!
