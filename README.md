@@ -1,5 +1,5 @@
 # The Sentinel Project
-##### Notes: 
+## Notes: 
 - You are going to need Python 3.6+ in order to run these scripts.
 - All these scripts are made by me.
 
