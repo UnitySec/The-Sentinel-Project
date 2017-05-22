@@ -5,7 +5,7 @@ try:
 except Exception as e:
     termcolor = colorama = None
 
-__all__ = ["colored", "iterate"]
+__all__ = ["colored", "pprint"]
 
 
 
