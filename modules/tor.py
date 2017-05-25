@@ -1,6 +1,6 @@
 from stem.util import term
 import stem.util.connection, stem.util.system, stem.connection, stem.process, stem.control
-import colorama, socket, socks
+import colorama, socket, socks, os
 
 colorama.init(autoreset=True)
 
@@ -68,11 +68,31 @@ class Tor(object):
 
 class HiddenService(object):
     def __init__(self, address, controller: Controller = None):
-        if not controller:
-            self.controller = Controller()
+        self.controller = controller if controller else Controller()
         
         self.address = (address + ".onion" if len(address) == 16 else address).lower()
         self.descriptor = self.controller.get_hidden_service_descriptor(address)
         self.introduction_points = self.descriptor.introduction_points
         for key in self.descriptor.ATTRIBUTES:
             setattr(self, key, getattr(self.descriptor, key))
+
+class EphemeralHiddenService(HiddenService):
+    def __init__(self, ports: dict = {80: 80}, discard_key: bool = False, detached: bool = False, private_key = None, controller: Controller = None):
+        controller = controller if controller else Controller()
+        
+        kwargs = {"await_publication": True, "discard_key": discard_key, "detached": detached}
+        if private_key:
+            data = chunk = private_key.read(0xFFF)
+            while chunk:
+                chunk = private_key.read(0xFFF)
+                data += chunk
+            ktype, kcontent = data.split(":", 1)
+            self.private_key = {"type": ktype, "content": kcontent}
+            kwargs.update({"key_type": ktype, "key_content": kcontent})
+        service = controller.create_ephemeral_hidden_service(ports, **kwargs)
+        for key, value in service.__dict__.items():
+            setattr(self, key, value)
+        super(EphemeralHiddenService, self).__init__(self.service_id, controller)
+    
+    def discontinue(self):
+        return self.controller.remove_ephemeral_hidden_service(self.service_id)
