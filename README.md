@@ -20,7 +20,6 @@
 - eph-hs.py: Ephemeral hidden service (.onion) managing (create, list & close).
 - fingerprintor.py: Retrieves descriptor (descriptive) information from hidden service addresses (.onion).
 - heartbleed.py: Check and exploit the heartbleed bug ...
-- help.py: None
 - pwn-test.py: [Check if you have an account that has been compromised in a data breach](https://haveibeenpwned.com/).
 - tor-console.py: Interactive interpreter for interacting with Tor directly.
 - tor.py: Tor process manager (start, list & kill) ...
