@@ -3,6 +3,7 @@ from modules.utils import *
 import requests, socket
 
 
+__doc__ = "Basic host location tracker using the JSON API provided by ip-api.com."
 
 def track(host):
     globe = ["            ,,,,,,            ",

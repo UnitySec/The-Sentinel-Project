@@ -4,6 +4,7 @@ from modules.session import Session
 import re
 
 
+__doc__ = "Uncovering bad guys hiding behind CloudFlare!"
 
 class CrimeFlare(Session):
     def __init__(self, *args, **kwargs):

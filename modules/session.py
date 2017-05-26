@@ -6,6 +6,7 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 
 __all__ = ["Session"]
+__doc__ = "Single class module to simplify common HTTP(s) tasks (such as proxifying, getting and parsing responses, etc)."
 
 class Session(object):
     def __init__(self, url):

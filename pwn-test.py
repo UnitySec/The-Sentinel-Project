@@ -3,6 +3,9 @@ from pprint import pprint
 from modules.utils import *
 from modules.haveibeenpwned import HIBP
 
+
+__doc__ = "Check if you have an account that has been compromised in a data breach."
+
 def walk(resp):
     for result in resp:
         for key, value in result.items():
@@ -17,7 +20,7 @@ def walk(resp):
         print("")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(__doc__)
     parser.add_argument("-b", "--breach-search", metavar="account", type=str, help="Search the specified username or email address on public breaches ...")
     parser.add_argument("-p", "--paste-search", metavar="account", type=str, help="Search the specified username or email address on public pastes ...")
     parser.add_argument("-t", "--truncate-response", action="store_true", default=False, help="Truncate response to only the breach names instead of the entire breach object ...")
