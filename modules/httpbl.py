@@ -1,6 +1,8 @@
 import dns.resolver, socket
 
 
+__doc__ = "Single class module to identify spammers and the spambots they use to scrape addresses from your website."
+
 class DNSbl(object):
     def __init__(self, access_key: str = "vztjisbgwwij"):
         self.access_key = access_key

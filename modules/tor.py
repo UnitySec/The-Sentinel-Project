@@ -2,8 +2,10 @@ from stem.util import term
 import stem.util.connection, stem.util.system, stem.connection, stem.process, stem.control
 import colorama, socket, socks, os
 
-colorama.init(autoreset=True)
 
+__doc__ = "Multi class module to interact with tor processes, hidden services, sockets, etc ..."
+
+colorama.init(autoreset=True)
 
 pids = lambda: stem.util.system.pid_by_name("tor", multiple = True)
 resolvers = stem.util.connection.system_resolvers()

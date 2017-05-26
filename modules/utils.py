@@ -6,7 +6,7 @@ except Exception as e:
     termcolor = colorama = None
 
 __all__ = ["colored", "pprint"]
-
+__doc__ = "Basic terminal utils ..."
 
 
 def colored(text, color="green", dark=False):

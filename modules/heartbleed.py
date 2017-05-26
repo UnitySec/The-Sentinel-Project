@@ -2,6 +2,7 @@ from modules.utils import colored
 import urllib.parse, socket, select, struct, time, os
 
 
+__doc__ = "Single class module to exploit the heartbleed bug on affected hosts ..."
 
 class Heartbleed(object):
     def __init__(self, target, timeout: int = 8, dump_dir: str = "", quiet: bool = True):

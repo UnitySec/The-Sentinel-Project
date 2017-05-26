@@ -2,6 +2,8 @@ from modules import session
 import time, argparse
 
 
+__doc__ = "Single class module to interact with the HaveIBeenPwned (haveibeenpwned.com) API."
+
 class HIBP(session.Session):
     def __init__(self, version=2):
         super(HIBP, self).__init__(f"https://haveibeenpwned.com/api/v{version}/")
