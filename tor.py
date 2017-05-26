@@ -3,8 +3,10 @@ from modules.utils import colored
 import argparse, signal, json, os
 
 
+__doc__ = "Tor process manager (start, list & kill) ..."
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(__doc__)
     parser.add_argument("-c", "--config", type=argparse.FileType(), metavar="File", help="Config file (.json).")
     parser.add_argument("-k", "--kill", type=int, metavar="PID", nargs="+", help="Kill/Close tor processes (from pids).")
     parser.add_argument("-l", "--list", action="store_true", help="List active tor processes.")

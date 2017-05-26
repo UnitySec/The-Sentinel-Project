@@ -2,6 +2,8 @@ import dns.resolver, dns.message, argparse
 from modules.utils import *
 
 
+__doc__ = "DNS record Mapper."
+
 class DNMap(dns.resolver.Resolver):
     def __init__(self):
         super(DNMap, self).__init__()
@@ -59,7 +61,7 @@ class DNMap(dns.resolver.Resolver):
                         print(colored(f" -  {name.ljust(self._max_rdtype_length)}") + colored(f"{e}", "red", dark=True))
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(__doc__)
     parser.add_argument("query", type=str, help="The query.")
     parser.add_argument("-t", "--timeout", type=int, default=8, help="The number of seconds to wait before the query times out.")
     parser.add_argument("-p", "--port", type=int, default=53, help="The port to which to send the message. The default is 53.")

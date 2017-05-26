@@ -3,8 +3,10 @@ from modules.utils import colored
 import argparse, os
 
 
+__doc__ = "Check and exploit the heartbleed bug ..."
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(epilog="TIP: This script can actually exploit HTTPS, SMTP, IMAP, POP3, XMPP and FTP services that work with the affected OpenSSL version.")
+    parser = argparse.ArgumentParser(__doc__, epilog="TIP: This script can actually exploit HTTPS, SMTP, IMAP, POP3, XMPP and FTP services that work with the affected OpenSSL version.")
     parser.add_argument("-u", "--url", type=str, help="Target URL: (e.g: 'http://hostname.ext:4433/', 'smtp://hostname.ext/')")
     parser.add_argument("-t", "--timeout", type=float, default=8, help="Timeout on socket operations (in seconds).")
     parser.add_argument("-d", "--dump-dir", type=str, default="", help="Directory to save dumped data on (Does not saves dump data if this have not been specified).")

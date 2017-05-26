@@ -3,8 +3,10 @@ from modules.utils import colored
 import argparse
 
 
+__doc__ = "Ephemeral hidden service (.onion) managing (create, list & close)."
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(__doc__)
     parser.add_argument("-l", "--list", action="store_true", help="List active hidden services.")
     parser.add_argument("-c", "--close", nargs="+", help="Discontinue the specified hidden service.")
     parser.add_argument("-p", "--ports", nargs="+", help="Hidden service port or map of hidden service port to their targets.")

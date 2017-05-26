@@ -3,9 +3,11 @@ from stem.util import term
 import argparse, socket, time
 
 
+__doc__ = "Retrieves descriptor (descriptive) information from hidden service addresses (.onion)."
+
 if __name__ == "__main__":
     Tor = None
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(__doc__)
     parser.add_argument("target", type=str, help="Target hidden service address.")
     args = parser.parse_args()
     target = args.target
