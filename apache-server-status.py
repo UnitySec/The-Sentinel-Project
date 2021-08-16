@@ -5,6 +5,7 @@ from modules.session import Session
 import os
 
 
+__doc__ = "Retrieves and parses data from unprotected server-status pages on Apache web servers."
 
 class Script(Session):
     def __init__(self, url):
@@ -53,7 +54,7 @@ class Script(Session):
 
 
 if __name__ == "__main__":
-    parser = ArgumentParser()
+    parser = ArgumentParser(__doc__)
     parser.add_argument("target", type=str, help="Target webserver address or url")
     args = parser.parse_args()
     try:

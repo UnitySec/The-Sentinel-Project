@@ -1,19 +1,9 @@
-try:
-    import colorama
-    import stem.interpreter
-except ImportError:
-    import os, sys
-    os.system(sys.executable + " -m pip install stem colorama")
+import colorama
+import stem.interpreter
+
+__doc__ = "Interactive interpreter for interacting with Tor directly."
+
 
 colorama.init(autoreset=True)
-
-class TorConsole:
-    def __init__(self):
-        pass
-    
-    def run(self):
-        stem.interpreter.main()
-
 if __name__ == "__main__":
-    tor = TorConsole()
-    tor.run()
+    stem.interpreter.main()

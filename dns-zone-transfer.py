@@ -3,6 +3,7 @@ import dns.query, dns.zone
 import argparse, socket, os
 
 
+__doc__ = "Requests a zone transfer (AXFR Query) from a DNS server."
 
 class Script(object):
     def __init__(self, zone, where="", port=53, source=None, source_port=0, timeout=None, lifetime=None, use_udp=False,
@@ -49,7 +50,7 @@ class Script(object):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser("dns-zone-transfer", description="Requests a zone transfer (AXFR Query) from a DNS server.")
+    parser = argparse.ArgumentParser("dns-zone-transfer", description=__doc__)
     parser.add_argument("zone", type=str, help="The name of the zone to transfer.")
     parser.add_argument("-w", "--where", type=str, default="", help="String containing an IPv4 or IPv6 address where to send the message.")
     parser.add_argument("-p", "--port", type=int, default=53, help="The port to which to send the message. The default is 53.")
